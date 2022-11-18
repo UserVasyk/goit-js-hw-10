@@ -20,5 +20,8 @@
     "parcel": "^2.8.0",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8"
   }
 }
