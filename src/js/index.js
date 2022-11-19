@@ -38,8 +38,6 @@ function onInputCountry(evt) {
       Notiflix.Notify.failure('Oops, there is no country with that name', {
         timeout: 3000,
       });
-      clearList(refs.countryList);
-      clearList(refs.countryInfo);
     });
 }
 
@@ -47,10 +45,6 @@ function clearList(list) {
   list.innerHTML = '';
 }
 function renderCountryInfo(country) {
-  if (refs.countryList !== '') {
-    clearList(refs.countryList);
-  }
-
   const { name, capital, population, flags, languages } = country;
   return (refs.countryInfo.innerHTML = `<div class="boxInfoCountry">
   <img class="country_flag" src="${flags.png}"></img>
@@ -67,10 +61,6 @@ function renderCountryInfo(country) {
   </ul>`);
 }
 function renderCountryList(countries) {
-  if (refs.countryInfo !== '') {
-    clearList(refs.countryInfo);
-  }
-
   return countries.map(country => {
     return refs.countryList.insertAdjacentHTML(
       'beforeend',
