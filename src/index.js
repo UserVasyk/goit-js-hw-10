@@ -1,8 +1,8 @@
 import './css/styles.css';
 import debounce from 'lodash.debounce';
-
+// import Handlebars from 'handlebars';
 import { fetchCountries } from './fetchCountries';
-import countryTemplate from './templates/countryTemplate.hbs';
+// import countryTemplate from './templates/countryTemplate.hbs';
 const refs = {
   inputCountry: document.querySelector('#search-box'),
   countryList: document.querySelector('.country-list'),
@@ -20,11 +20,12 @@ function onInputCountry(evt) {
   const name = evt.target.value;
   fetchCountries(name.trim())
     .then(responce => {
+      const compiledTemplate = Handlebars.compile(countryTemplate);
       console.log(responce);
-      refs.countryList.insertAdjacentHTML(
-        'beforeend',
-        countryTemplate(responce)
-      );
+      // refs.countryList.insertAdjacentHTML(
+      //   'beforeend',
+      //   compiledTemplate(responce)
+      // );
     })
     .catch(error => console.log('error', error));
 }
