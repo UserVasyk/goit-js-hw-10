@@ -18,3 +18,49 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+h1,
+h2,
+ul,
+p {
+  padding: 0;
+  margin: 0;
+}
+img {
+  display: block;
+}
+.country-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.country_flag {
+  width: 30px;
+}
+.country-list > li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.boxInfoCountry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.infoListCountry {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+}
+.infoListCountry > li > h2 {
+  font-size: 20px;
+}
+.valueInfo {
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 10px;
+}

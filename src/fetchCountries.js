@@ -1,14 +1,14 @@
 function fetchCountries(name) {
-  return fetch(
-    `https://restcountries.com/v3.1/name/${name}?fields=name.official,capital,population,flags.png,languages`
-  )
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      console.log(response);
-      return response.json();
-    })
-    .then(r => r.articles);
+  const params = {
+    mainUrl: 'https://restcountries.com/v3.1/name',
+    sortUrl: 'fields=name,capital,population,flags,languages',
+  };
+  return fetch(`${params.mainUrl}/${name}?${params.sortUrl}`).then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+
+    return response.json();
+  });
 }
 export { fetchCountries };
