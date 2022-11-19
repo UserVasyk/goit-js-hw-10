@@ -22,6 +22,8 @@
     "posthtml-include": "^1.7.4"
   },
   "dependencies": {
-    "lodash.debounce": "^4.0.8"
-  }
+    "lodash.debounce": "^4.0.8",
+    "notiflix": "^3.2.5"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
