@@ -16,7 +16,8 @@ function onInputCountry(evt) {
   const countryName = evt.target.value;
   if (countryName === '' || evt.data === ' ') {
     return;
-  }
+  } 
+  
   fetchCountries(countryName.trim())
     .then(countries => {
       if (countries.length > 1) {
